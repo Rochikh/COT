@@ -1,0 +1,4 @@
+# Fichiers à ignorer
+node_modules/
+.env
+.DS_Store
