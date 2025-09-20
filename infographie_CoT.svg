@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1920" viewBox="0 0 1080 1920">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap');
+      .title { font-family: 'Space Grotesk', Arial, sans-serif; font-weight: 700; fill: #ffffff; }
+      .subtitle { font-family: 'Space Grotesk', Arial, sans-serif; font-weight: 500; fill: #16345f; }
+      .section-title { font-family: 'Space Grotesk', Arial, sans-serif; font-weight: 700; fill: #16345f; }
+      .body { font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size: 28px; line-height: 1.4; fill: #16345f; }
+      .number { font-family: 'Space Grotesk', Arial, sans-serif; font-size: 38px; font-weight: 700; fill: #16345f; }
+      .label { font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size: 26px; font-weight: 700; fill: #16345f; }
+      .small { font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size: 24px; fill: #16345f; }
+    </style>
+  </defs>
+  <rect width="1080" height="1920" fill="#ffffff"/>
+  <rect x="0" y="0" width="1080" height="220" fill="#16345f"/>
+  <text class="title" x="540" y="110" font-size="70" text-anchor="middle">Méthode « Chaîne de pensée » (CoT)</text>
+  <text class="title" x="540" y="180" font-size="32" text-anchor="middle" fill="#b9e9dc">Structurer les questions pour stimuler le raisonnement</text>
+
+  <!-- Section 1 -->
+  <g transform="translate(110,270)">
+    <rect x="0" y="0" width="860" height="210" rx="24" fill="#e5f7f4" stroke="#47b7a4" stroke-width="4"/>
+    <circle cx="60" cy="60" r="40" fill="#47b7a4"/>
+    <text class="number" x="60" y="72" text-anchor="middle" fill="#ffffff">1</text>
+    <text class="section-title" x="130" y="70" font-size="46">Définition</text>
+    <text class="body" x="130" y="130" width="730">La Chaîne de pensée consiste à demander à l’IA d’expliquer son raisonnement étape par étape avant de donner une réponse finale.</text>
+  </g>
+
+  <!-- Section 2 -->
+  <g transform="translate(110,510)">
+    <rect x="0" y="0" width="860" height="280" rx="24" fill="#ffffff" stroke="#47b7a4" stroke-width="4"/>
+    <circle cx="60" cy="60" r="40" fill="#47b7a4"/>
+    <text class="number" x="60" y="72" text-anchor="middle" fill="#ffffff">2</text>
+    <text class="section-title" x="130" y="70" font-size="46">Pourquoi l’utiliser ?</text>
+    <g transform="translate(130,120)">
+      <rect x="0" y="-40" width="14" height="210" fill="#47b7a4"/>
+      <text class="label" x="40" y="0">Précision</text>
+      <text class="body" x="40" y="40">L’IA raisonne plutôt que deviner.</text>
+      <text class="label" x="40" y="90">Clarté</text>
+      <text class="body" x="40" y="130">Le cheminement devient visible.</text>
+      <text class="label" x="40" y="180">Fiabilité</text>
+      <text class="body" x="40" y="220">On peut vérifier chaque étape.</text>
+    </g>
+  </g>
+
+  <!-- Section 3 -->
+  <g transform="translate(110,830)">
+    <rect x="0" y="0" width="860" height="320" rx="24" fill="#e5f7f4" stroke="#47b7a4" stroke-width="4"/>
+    <circle cx="60" cy="60" r="40" fill="#47b7a4"/>
+    <text class="number" x="60" y="72" text-anchor="middle" fill="#ffffff">3</text>
+    <text class="section-title" x="130" y="70" font-size="46">Comment poser une bonne question ?</text>
+    <g transform="translate(130,120)">
+      <rect x="0" y="-40" width="14" height="250" fill="#47b7a4"/>
+      <text class="body" x="40" y="0">Découper la tâche en sous-éléments.</text>
+      <text class="body" x="40" y="70">Dire explicitement : « explique étape par étape ».</text>
+      <text class="body" x="40" y="140">Vérifier la cohérence avant la conclusion.</text>
+    </g>
+  </g>
+
+  <!-- Section 4 header -->
+  <g transform="translate(110,1190)">
+    <rect x="0" y="0" width="860" height="540" rx="24" fill="#ffffff" stroke="#47b7a4" stroke-width="4"/>
+    <circle cx="60" cy="60" r="40" fill="#47b7a4"/>
+    <text class="number" x="60" y="72" text-anchor="middle" fill="#ffffff">4</text>
+    <text class="section-title" x="130" y="70" font-size="46">Exemples comparés</text>
+
+    <!-- Mathématiques -->
+    <g transform="translate(60,130)">
+      <rect x="0" y="0" width="720" height="130" rx="18" fill="#e5f7f4"/>
+      <text class="subtitle" x="30" y="48" font-size="34">A. Mathématiques</text>
+      <text class="small" x="30" y="84">Question simple : « Combien pour 4 paquets à 12 € ? » → Réponse brute : 48 €</text>
+      <text class="small" x="30" y="118">Question CoT : détailler le calcul 12 × 4 avant la conclusion → Réponse CoT : 12 × 4 = 48 → Total 48 €</text>
+    </g>
+
+    <!-- Administratif -->
+    <g transform="translate(60,280)">
+      <rect x="0" y="0" width="720" height="130" rx="18" fill="#e5f7f4"/>
+      <text class="subtitle" x="30" y="48" font-size="34">B. Administratif</text>
+      <text class="small" x="30" y="84">Question simple : « Reste avec 1500 € de revenu et 900 € de charges ? » → Réponse brute : 600 €</text>
+      <text class="small" x="30" y="118">Question CoT : préciser revenu, charges et demander la soustraction étape par étape → Réponse CoT : 1500 – 900 = 600 → Reste 600 €</text>
+    </g>
+
+    <!-- Pédagogique -->
+    <g transform="translate(60,430)">
+      <rect x="0" y="0" width="720" height="130" rx="18" fill="#e5f7f4"/>
+      <text class="subtitle" x="30" y="48" font-size="34">C. Pédagogique</text>
+      <text class="small" x="30" y="84">Question simple : « Pourquoi l’eau bout plus vite en montagne ? » → Réponse brute : pression.</text>
+      <text class="small" x="30" y="118">Question CoT : étapes pression/altitude/température → Réponse CoT : pression ↓ → ébullition plus rapide → conclusion.</text>
+    </g>
+  </g>
+
+  <!-- Section 5 -->
+  <g transform="translate(110,1770)">
+    <rect x="0" y="0" width="860" height="120" rx="24" fill="#16345f"/>
+    <text class="section-title" x="430" y="50" font-size="44" fill="#ffffff">À retenir</text>
+    <text class="body" x="430" y="95" text-anchor="middle" fill="#ffffff">La CoT dépend de la structure de ta question : en la guidant, tu déclenches le raisonnement.</text>
+  </g>
+</svg>
