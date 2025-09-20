@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Infographie CoT - BF</title>
+  <style>
+    :root {
+      --blue: #16345f;
+      --turquoise: #2ab5ba;
+      --white: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Segoe UI", "Inter", "Helvetica Neue", Arial, sans-serif;
+      color: var(--blue);
+      background: var(--white);
+      line-height: 1.6;
+    }
+
+    .page {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 24px 24px 56px;
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      background: var(--blue);
+      color: var(--white);
+      border-radius: 28px;
+      padding: 56px 64px;
+      margin-bottom: 56px;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: -80px -120px auto auto;
+      width: 320px;
+      height: 320px;
+      background: rgba(42, 181, 186, 0.18);
+      border-radius: 50%;
+      filter: blur(0.4px);
+    }
+
+    .hero-kicker {
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.2rem;
+      margin-bottom: 18px;
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 4vw, 3.4rem);
+      margin: 0 0 16px;
+      line-height: 1.2;
+    }
+
+    .hero-subtitle {
+      max-width: 640px;
+      font-size: 1.1rem;
+      margin-bottom: 32px;
+      color: rgba(255, 255, 255, 0.82);
+    }
+
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border-radius: 999px;
+      padding: 10px 18px;
+      background: rgba(255, 255, 255, 0.1);
+      font-weight: 600;
+      font-size: 0.95rem;
+      letter-spacing: 0.01em;
+    }
+
+    .badge span {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: rgba(42, 181, 186, 0.25);
+      color: var(--white);
+      font-size: 0.75rem;
+      font-weight: 700;
+    }
+
+    .section {
+      margin-bottom: 64px;
+    }
+
+    .section-title {
+      font-size: clamp(1.6rem, 2.8vw, 2.4rem);
+      margin-bottom: 12px;
+    }
+
+    .section-intro {
+      margin-bottom: 32px;
+      max-width: 760px;
+      color: rgba(22, 52, 95, 0.76);
+      font-size: 1.05rem;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 24px;
+    }
+
+    .card {
+      background: rgba(42, 181, 186, 0.1);
+      border: 1px solid rgba(22, 52, 95, 0.05);
+      border-radius: 24px;
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      min-height: 100%;
+    }
+
+    .card-header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .icon-bubble {
+      display: inline-flex;
+      width: 48px;
+      height: 48px;
+      border-radius: 16px;
+      align-items: center;
+      justify-content: center;
+      background: rgba(22, 52, 95, 0.12);
+      color: var(--blue);
+      font-weight: 700;
+      font-size: 1.25rem;
+    }
+
+    .card h3 {
+      margin: 0;
+      font-size: 1.3rem;
+    }
+
+    .card ul {
+      margin: 0;
+      padding-left: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 20px;
+    }
+
+    .timeline-step {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 16px 20px;
+      padding: 24px;
+      border-radius: 20px;
+      background: rgba(22, 52, 95, 0.06);
+      border: 1px solid rgba(22, 52, 95, 0.08);
+    }
+
+    .step-index {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--turquoise);
+      color: var(--blue);
+      font-weight: 700;
+      font-size: 1.15rem;
+    }
+
+    .step-content h4 {
+      margin: 0 0 8px;
+      font-size: 1.15rem;
+    }
+
+    .step-content p {
+      margin: 0 0 12px;
+      color: rgba(22, 52, 95, 0.78);
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: rgba(42, 181, 186, 0.18);
+      color: var(--blue);
+      font-weight: 600;
+      font-size: 0.85rem;
+      letter-spacing: 0.02em;
+    }
+
+    .callout {
+      display: grid;
+      gap: 20px;
+      padding: 32px;
+      border-radius: 24px;
+      background: rgba(42, 181, 186, 0.12);
+      border: 1px solid rgba(42, 181, 186, 0.24);
+    }
+
+    .callout strong {
+      font-size: 1.1rem;
+    }
+
+    .best-practices {
+      display: grid;
+      gap: 24px;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+
+    .best-practices article {
+      background: rgba(22, 52, 95, 0.06);
+      border-radius: 20px;
+      padding: 24px;
+      border: 1px solid rgba(22, 52, 95, 0.1);
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .best-practices h4 {
+      margin: 0;
+      font-size: 1.15rem;
+    }
+
+    .best-practices ul {
+      margin: 0;
+      padding-left: 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    footer {
+      margin-top: 32px;
+      text-align: center;
+      color: rgba(22, 52, 95, 0.6);
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 900px) {
+      .hero {
+        padding: 48px 32px;
+        border-radius: 24px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .hero {
+        padding: 40px 28px;
+      }
+
+      .hero-badges {
+        gap: 10px;
+      }
+
+      .timeline-step {
+        grid-template-columns: 1fr;
+      }
+
+      .step-index {
+        justify-self: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header class="hero">
+      <div class="hero-content">
+        <p class="hero-kicker">Méthode CoT</p>
+        <h1>Clarifier, Orchestrer, Transformer la pensée</h1>
+        <p class="hero-subtitle">
+          L'infographie CoT met en lumière la progression de la réflexion pour produire des réponses fiables,
+          argumentées et orientées actions.
+        </p>
+        <div class="hero-badges">
+          <span class="badge"><span>1</span> Clarifier les attentes</span>
+          <span class="badge"><span>2</span> Décomposer le raisonnement</span>
+          <span class="badge"><span>3</span> Valider et formaliser</span>
+        </div>
+      </div>
+    </header>
+
+    <section class="section">
+      <h2 class="section-title">Les trois piliers de la démarche CoT</h2>
+      <p class="section-intro">
+        Chaque pilier structure la pensée pour gagner en précision et en impact. L'ensemble offre un parcours complet,
+        de la compréhension initiale jusqu'à la restitution finale.
+      </p>
+      <div class="card-grid">
+        <article class="card">
+          <div class="card-header">
+            <div class="icon-bubble">1</div>
+            <h3>Contextualiser</h3>
+          </div>
+          <p>Identifiez les paramètres clés qui cadrent la question.</p>
+          <ul>
+            <li>Définir l'objectif, le périmètre et les contraintes.</li>
+            <li>Relever les parties prenantes et leurs attentes.</li>
+            <li>Mettre en avant les données disponibles ou manquantes.</li>
+          </ul>
+        </article>
+        <article class="card">
+          <div class="card-header">
+            <div class="icon-bubble">2</div>
+            <h3>Orchestrer</h3>
+          </div>
+          <p>Structurez la réflexion et préparez un déroulé rigoureux.</p>
+          <ul>
+            <li>Décomposer la question en sous-problèmes logiques.</li>
+            <li>Hiérarchiser les étapes pour guider l'analyse.</li>
+            <li>Tracer les hypothèses à vérifier et les leviers d'action.</li>
+          </ul>
+        </article>
+        <article class="card">
+          <div class="card-header">
+            <div class="icon-bubble">3</div>
+            <h3>Transformer</h3>
+          </div>
+          <p>Convertissez les idées en livrables clairs et mobilisateurs.</p>
+          <ul>
+            <li>Synthétiser les conclusions en messages clés.</li>
+            <li>Formuler des recommandations actionnables et priorisées.</li>
+            <li>Prévoir les indicateurs de suivi pour mesurer l'impact.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">Processus pas à pas</h2>
+      <p class="section-intro">
+        Six séquences successives jalonnent l'expérience CoT. Elles sécurisent la compréhension, l'analyse puis la
+        diffusion pour garantir une réponse complète et crédible.
+      </p>
+      <div class="timeline">
+        <div class="timeline-step">
+          <div class="step-index">1</div>
+          <div class="step-content">
+            <h4>Aligner la demande</h4>
+            <p>Reformulez la problématique en explicitant le résultat attendu et les critères de réussite.</p>
+            <div class="chips">
+              <span class="chip">Objectif partagé</span>
+              <span class="chip">Public ciblé</span>
+            </div>
+          </div>
+        </div>
+        <div class="timeline-step">
+          <div class="step-index">2</div>
+          <div class="step-content">
+            <h4>Collecter les faits</h4>
+            <p>Évaluez les informations disponibles, leur fiabilité et les zones d'incertitude à combler.</p>
+            <div class="chips">
+              <span class="chip">Sources clés</span>
+              <span class="chip">Données critiques</span>
+            </div>
+          </div>
+        </div>
+        <div class="timeline-step">
+          <div class="step-index">3</div>
+          <div class="step-content">
+            <h4>Tracer la logique</h4>
+            <p>Cartographiez les étapes du raisonnement pour rendre visible la progression des idées.</p>
+            <div class="chips">
+              <span class="chip">Chaîne de causes</span>
+              <span class="chip">Hypothèses</span>
+            </div>
+          </div>
+        </div>
+        <div class="timeline-step">
+          <div class="step-index">4</div>
+          <div class="step-content">
+            <h4>Explorer les options</h4>
+            <p>Comparez les scénarios possibles en évaluant impact, risques et effort.</p>
+            <div class="chips">
+              <span class="chip">Options A/B</span>
+              <span class="chip">Critères partagés</span>
+            </div>
+          </div>
+        </div>
+        <div class="timeline-step">
+          <div class="step-index">5</div>
+          <div class="step-content">
+            <h4>Consolider la réponse</h4>
+            <p>Sélectionnez la solution la plus robuste et préparez la preuve qui la soutient.</p>
+            <div class="chips">
+              <span class="chip">Arguments clés</span>
+              <span class="chip">Plan d'action</span>
+            </div>
+          </div>
+        </div>
+        <div class="timeline-step">
+          <div class="step-index">6</div>
+          <div class="step-content">
+            <h4>Partager et ajuster</h4>
+            <p>Présentez la synthèse, recueillez les retours, ajustez les actions et confirmez le suivi.</p>
+            <div class="chips">
+              <span class="chip">Feedback</span>
+              <span class="chip">Prochaines étapes</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">Bonnes pratiques pour animer la CoT</h2>
+      <p class="section-intro">
+        La dynamique collective et la qualité de restitution sont les deux leviers majeurs de la réussite. Utilisez cette
+        check-list pour conserver rythme, clarté et engagement.
+      </p>
+      <div class="best-practices">
+        <article>
+          <h4>Activer l'intelligence collective</h4>
+          <ul>
+            <li>Partager les règles du jeu dès le lancement.</li>
+            <li>Inviter les expertises complémentaires au bon moment.</li>
+            <li>Tracer les décisions et les responsabilités en direct.</li>
+          </ul>
+        </article>
+        <article>
+          <h4>Valoriser la transparence</h4>
+          <ul>
+            <li>Visualiser la progression et les jalons franchis.</li>
+            <li>Documenter les sources et les limites de l'analyse.</li>
+            <li>Assurer un accès simple aux livrables et au plan de suivi.</li>
+          </ul>
+        </article>
+        <article>
+          <h4>Renforcer l'impact</h4>
+          <ul>
+            <li>Conclure par des messages clés orientés action.</li>
+            <li>Projeter les bénéfices attendus et les indicateurs de succès.</li>
+            <li>Prévoir la boucle d'amélioration continue.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="callout">
+      <strong>En résumé</strong>
+      <p>
+        La démarche CoT guide la pensée de bout en bout&nbsp;: elle cadre, structure et transforme l'information en
+        décisions concrètes. Utilisez cette infographie comme support pour vos ateliers, vos notes de synthèse ou vos
+        présentations clients.
+      </p>
+    </section>
+
+    <footer>
+      Infographie CoT &mdash; BF · 2024
+    </footer>
+  </div>
+</body>
+</html>
